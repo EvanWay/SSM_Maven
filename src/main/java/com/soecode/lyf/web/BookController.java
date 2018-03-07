@@ -73,4 +73,11 @@ public class BookController {
 		}
 		return new Result<AppointExecution>(true, execution);
 	}
+
+	//返回json
+	@RequestMapping(value = "/lrj",method = RequestMethod.GET)
+    @ResponseBody
+    private String lrj(){
+	    return "I'm LRJ";
+    }
 }
