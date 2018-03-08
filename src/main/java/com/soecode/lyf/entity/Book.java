@@ -5,14 +5,16 @@ package com.soecode.lyf.entity;
  */
 public class Book {
 
-	private long bookId;// 图书ID
+	// 图书ID
+	private long bookId;
 
-	private String name;// 图书名称
+	// 图书名称
+	private String name;
 
-	private int number;// 馆藏数量
+	// 馆藏数量
+	private int number;
 
-	public Book() {
-	}
+	public Book() { }
 
 	public Book(long bookId, String name, int number) {
 		this.bookId = bookId;

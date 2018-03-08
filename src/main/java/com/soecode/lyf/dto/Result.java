@@ -5,11 +5,14 @@ package com.soecode.lyf.dto;
  */
 public class Result<T> {
 
-	private boolean success;// 是否成功标志
+    // 是否成功标志
+	private boolean success;
 
-	private T data;// 成功时返回的数据
+    // 成功时返回的数据
+	private T data;
 
-	private String error;// 错误信息
+	// 错误信息
+	private String error;
 
 	public Result() {
 	}

@@ -6,13 +6,11 @@ import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.soecode.lyf.dto.AppointExecution;
 import com.soecode.lyf.dto.Result;
@@ -36,7 +34,7 @@ public class BookController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	private String list(Model model) {
 		List<Book> list = bookService.getList();
-		model.addAttribute("list", list);//添加之后JSP可以获得
+		model.addAttribute("list", list);//添加之后,JSP页面可以获得
 		return "list";// WEB-INF/jsp/"list".jsp
 	}
 
@@ -76,8 +74,7 @@ public class BookController {
 
 	//返回json
 	@RequestMapping(value = "/lrj",method = RequestMethod.GET)
-    @ResponseBody
-    private String lrj(){
-	    return "I'm LRJ";
+    private @ResponseBody ResponseEntity lrj(){
+	    return new ResponseEntity("Hello!",HttpStatus.NOT_FOUND);
     }
 }

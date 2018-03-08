@@ -7,14 +7,17 @@ import java.util.Date;
  */
 public class Appointment {
 
-	private long bookId;// 图书ID
+	// 图书ID
+	private long bookId;
 
-	private long studentId;// 学号
+	// 学号
+	private long studentId;
 
-	private Date appointTime;// 预约时间
+	// 预约时间
+	private Date appointTime;
 
-	// 多对一的复合属性
-	private Book book;// 图书实体
+	// 图书实体
+	private Book book;
 
 	public Appointment() {
 	}
