@@ -34,8 +34,10 @@ public class BookController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	private String list(Model model) {
 		List<Book> list = bookService.getList();
-		model.addAttribute("list", list);//添加之后,JSP页面可以获得
-		return "list";// WEB-INF/jsp/"list".jsp
+        //addAttribute之后,JSP页面可以获得
+		model.addAttribute("list", list);
+        // WEB-INF/jsp/"list".jsp
+		return "list";
 	}
 
 	@RequestMapping(value = "/{bookId}/detail", method = RequestMethod.GET)
