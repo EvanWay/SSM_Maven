@@ -16,7 +16,7 @@ public class AppointmentDaoTest extends BaseTest {
 		long bookId = 1000;
 		long studentId = 12345678910L;
 		int insert = appointmentDao.insertAppointment(bookId, studentId);
-		System.out.println("insert=" + insert);
+		System.out.println("insert行数=" + insert);
 	}
 
 	@Test

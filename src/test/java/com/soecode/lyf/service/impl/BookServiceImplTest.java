@@ -19,6 +19,7 @@ public class BookServiceImplTest extends BaseTest {
 		long bookId = 1001;
 		long studentId = 12345678910L;
 		AppointExecution execution = bookService.appoint(bookId, studentId);
+		System.out.println("testAppoint预约图书功能");
 		System.out.println(execution);
 	}
 
