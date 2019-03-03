@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.soecode.lyf.dao.AppointmentDao;
-import com.soecode.lyf.dao.BookDao;
+import com.soecode.lyf.mapper.dao.AppointmentDao;
+import com.soecode.lyf.mapper.dao.BookDao;
 import com.soecode.lyf.dto.AppointExecution;
 import com.soecode.lyf.entity.Appointment;
 import com.soecode.lyf.entity.Book;

@@ -1,4 +1,4 @@
-package com.soecode.lyf.dao;
+package com.soecode.lyf.mapper.dao;
 
 import java.util.Date;
 import java.util.List;
