@@ -77,6 +77,6 @@ public class BookController {
 	//返回json
 	@RequestMapping(value = "/lrj",method = RequestMethod.GET)
     private @ResponseBody ResponseEntity lrj(){
-	    return new ResponseEntity("Hello!",HttpStatus.NOT_FOUND);
+	    return new ResponseEntity("Hello!",HttpStatus.OK);
     }
 }
