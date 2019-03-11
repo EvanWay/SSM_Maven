@@ -9,10 +9,10 @@ public class BookTest {
 
     @Test
     public void bookTest() {
-
-        ApplicationContext ac = new ClassPathXmlApplicationContext("spring-service.xml");
-        Book b = (Book) ac.getBean("test");
-        b.setBookId(666);
-        System.out.println(b);
+    	//使用ClassPathXmlApplicationContext加载bean
+        ApplicationContext ac = new ClassPathXmlApplicationContext(new String[] {"classpath:spring/spring-service.xml","classpath:spring/spring-dao.xml"});
+        Book book = (Book) ac.getBean("test");
+        book.setBookId(666);
+        System.out.println(book);
     }
 }
