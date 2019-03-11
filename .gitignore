@@ -1,0 +1,12 @@
+# Maven ignore
+target/
+
+# Eclipse ignore
+.settings/
+.project
+.classpath
+
+
+# Intellij idea ignore
+.idea/
+*.iml
