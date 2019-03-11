@@ -37,9 +37,9 @@
 		<!-- 配置MyBatis全局配置文件:mybatis-config.xml -->
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<!-- 扫描entity包 使用别名 -->
-		<property name="typeAliasesPackage" value="com.evanway.seckill.entity" />
+		<property name="typeAliasesPackage" value="com.soecode.lyf.entity" />
 		<!-- 扫描sql配置文件:mapper需要的xml文件 -->
-		<property name="mapperLocations" value="classpath:com/evanway/seckill/mapper/xml/*.xml" />
+		<property name="mapperLocations" value="classpath:com/soecode/lyf/mapper/xml/*.xml" />
 	</bean>
 
 	<!-- 4.配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 -->
@@ -47,6 +47,6 @@
 		<!-- 注入sqlSessionFactory -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 给出需要扫描Dao接口包 -->
-		<property name="basePackage" value="com.evanway.seckill.mapper.dao" />
+		<property name="basePackage" value="com.soecode.lyf.mapper.dao" />
 	</bean>
 </beans>
