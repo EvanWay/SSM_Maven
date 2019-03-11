@@ -6,7 +6,6 @@ target/
 .project
 .classpath
 
-
 # Intellij idea ignore
 .idea/
 *.iml
