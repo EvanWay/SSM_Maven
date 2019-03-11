@@ -1,5 +1,7 @@
 package com.evanway.seckill.mapper.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.evanway.seckill.entity.SuccessKilled;
 
 public interface SuccessKilledDao {
@@ -11,7 +13,7 @@ public interface SuccessKilledDao {
 	 * @param userPhone
 	 * @return 插入的行数
 	 */
-	int insertSuccessKilled(long seckillId, long userPhone);
+	int insertSuccessKilled(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 
 	/**
 	 * 根据id查询SuccessKilled并携带秒杀对象实体
@@ -19,5 +21,5 @@ public interface SuccessKilledDao {
 	 * @param seckillId
 	 * @return
 	 */
-	SuccessKilled queryByIdWithSecKill(long seckillId);
+	SuccessKilled queryByIdWithSecKill(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 }

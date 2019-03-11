@@ -1,5 +1,6 @@
 package com.evanway.seckill.mapper.dao;
 
+import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,18 +12,13 @@ public class SeckillDaoTest extends BaseTest {
 
 	@Autowired
 	private SeckillDao seckillDao;
-	
-	@Test
-	public void testReduceNumber() {
-		
-	}
 
 	@Test
 	public void testQueryById() {
 		long id = 1000;
 		Seckill seckill = seckillDao.queryById(id);
 		System.out.println(seckill.getName());
-		System.out.println(seckill);		
+		System.out.println(seckill);
 	}
 
 	@Test
@@ -31,5 +27,13 @@ public class SeckillDaoTest extends BaseTest {
 		for (Seckill seckill : seckills) {
 			System.out.println(seckill);
 		}
+	}
+
+	@Test
+	public void testReduceNumber() {
+		long id = 1000;
+		Date killTime = new Date();
+		int updateCount = seckillDao.reduceNumber(id, killTime);
+		System.out.println("updateCount=" + updateCount);
 	}
 }

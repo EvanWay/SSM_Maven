@@ -5,14 +5,14 @@
 <mapper namespace="com.evanway.seckill.mapper.dao.SuccessKilledDao">
 
 	<insert id="insertSuccessKilled">
-		INSERT IGNORE INTO success_seckilled(seckill_id,user_phone)
-		VALUES (#{seckillId},#{userPhone})
+		INSERT IGNORE INTO success_seckilled(seckill_id,user_phone,state)
+		VALUES (#{seckillId},#{userPhone},0)
 	</insert>
 	
 	<select id="queryByIdWithSecKill" resultType="SuccessKilled">
 		SELECT
 			sk.seckill_id,
-			sk.phone,
+			sk.user_phone,
 			sk.state,
 			sk.create_time,
 			s.seckill_id "seckill.seckill_id", 
@@ -24,7 +24,7 @@
 		FROM
 			success_seckilled sk
 		INNER JOIN seckill s ON sk.seckill_id = s.seckill_id
-		WHERE sk.seckill_id = #{seckillId}
+		WHERE sk.seckill_id = #{seckillId} AND sk.user_phone = #{userPhone}
 	</select>
 	
 </mapper>
