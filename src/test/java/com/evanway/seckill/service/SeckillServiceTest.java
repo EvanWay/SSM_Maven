@@ -1,7 +1,5 @@
 package com.evanway.seckill.service;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import org.junit.Test;

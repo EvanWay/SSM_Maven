@@ -1,7 +1,5 @@
 package com.soecode.lyf.service.impl;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

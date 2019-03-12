@@ -3,6 +3,7 @@ package com.soecode.lyf;
 import com.soecode.lyf.entity.Book;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BookTest {
@@ -13,6 +14,7 @@ public class BookTest {
         ApplicationContext ac = new ClassPathXmlApplicationContext(new String[] {"classpath:spring/spring-service.xml","classpath:spring/spring-dao.xml"});
         Book book = (Book) ac.getBean("test");
         book.setBookId(666);
+		((ConfigurableApplicationContext) ac).close();
         System.out.println(book);
     }
 }
