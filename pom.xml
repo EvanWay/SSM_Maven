@@ -18,7 +18,8 @@
 		</dependency>
 
 		<!-- 1.日志 -->
-		<!-- 实现slf4j接口并整合 -->
+		<!-- slf4j是接口，log4j,logback,common-logging是具体实现
+			这里使用：  slf4j+logback -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>

@@ -19,9 +19,9 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<!-- 配置基于注解的声明式事务 -->
+	<!-- 配置基于注解的声明式事务 默认使用注解来管理事务行为-->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
-	<!--test-->
+	<!--用于BookTest-->
     <bean name="test" class="com.soecode.lyf.entity.Book"></bean>
 </beans>
