@@ -30,20 +30,18 @@ var seckill = {
 	detail : {
 		// 详情页初始化
 		init : function(params) {
-			// 手机验证和登录,计时交互
-			// 规划我们的交互流程
+			// 手机验证和登录
 			// 在cookie中查找手机号
 			var userPhone = $.cookie('userPhone');
-			// 验证手机号 验证错误
+			// 验证cookie中的手机号
 			if (!seckill.validatePhone(userPhone)) {
-				// 绑定手机 控制输出
+				// 不通过就弹出来让用户填
 				var killPhoneModal = $('#killPhoneModal');
 				killPhoneModal.modal({
 					show : true,// 显示弹出层,detail.jsp中弹出层默认是隐藏的
 					backdrop : 'static',// 禁止位置关闭
 					keyboard : false// 关闭键盘事件
 				});
-				// 弹出层的提交按钮做绑定操作
 				$('#killPhoneBtn').click(function() {
 					var inputPhone = $('#killPhoneKey').val();
 					console.log("inputPhone: " + inputPhone);
@@ -61,8 +59,7 @@ var seckill = {
 				});
 			}
 
-			// 已经登录
-			// 计时交互
+			// 手机验证通过，已经登录，进行计时交互
 			var startTime = params['startTime'];
 			var endTime = params['endTime'];
 			var seckillId = params['seckillId'];
@@ -93,7 +90,7 @@ var seckill = {
 					var md5 = exposer['md5'];
 					var killUrl = seckill.URL.execution(seckillId, md5);
 					console.log("killUrl: " + killUrl);
-					// 绑定一次点击事件 click一直绑定点击事件 防止用户一直点击事件向服务器发送大量请求
+					// one绑定一次点击事件 click一直绑定点击事件 防止用户一直点击事件向服务器发送大量请求
 					$('#killBtn').one('click',function() {
 						// 执行秒杀请求
 						// 1.先禁用按钮
@@ -123,6 +120,7 @@ var seckill = {
 		});
 
 	},
+	
 	// 将时间的比较封装成一个函数
 	countDown : function(seckillId, nowTime, startTime, endTime) {
 		console.log(seckillId + '_' + nowTime + '_' + startTime + '_' + endTime);

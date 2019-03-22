@@ -59,9 +59,11 @@
 <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 <%--jQuery Cookie操作插件--%>
-<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<%--<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>--%>
+<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <%--jQuery countDown倒计时插件--%>
-<script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
+<%--<script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>--%>
+<script src="http://cdn.bootcss.com/jquery.countdown/2.1.0/jquery.countdown.js"></script>
  
 <script src="/resources/script/seckill.js" type="text/javascript"></script>
  
@@ -73,6 +75,5 @@
             endTime:${seckill.endTime.time}
         });
     });
-    
 </script>
 </html>
