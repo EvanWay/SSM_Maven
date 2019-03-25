@@ -20,6 +20,7 @@ import com.evanway.seckill.exception.SeckillCloseException;
 import com.evanway.seckill.exception.SeckillException;
 import com.evanway.seckill.mapper.dao.SeckillDao;
 import com.evanway.seckill.mapper.dao.SuccessKilledDao;
+import com.evanway.seckill.mapper.dao.cache.RedisDao;
 import com.evanway.seckill.service.SeckillService;
 
 //@Component @Service @Dao @Controller
@@ -32,6 +33,9 @@ public class SeckillServiceImpl implements SeckillService {
 
 	@Autowired
 	private SuccessKilledDao successKilledDao;
+	
+	@Autowired
+	private RedisDao redisDao;
 
 	private final String salt = "sadfafafasf1231=-00";
 
@@ -47,9 +51,15 @@ public class SeckillServiceImpl implements SeckillService {
 
 	@Override
 	public Exposer exportSeckillUrl(long seckillId) {
-		Seckill seckill = seckillDao.queryById(seckillId);
-		if (seckill == null) {
-			return new Exposer(false, seckillId);
+		// 使用redis优化
+		Seckill seckill = redisDao.getSeckill(seckillId);
+		if(seckill==null) {
+			seckill = seckillDao.queryById(seckillId);
+			if (seckill == null) {
+				return new Exposer(false, seckillId);
+			}else {
+				redisDao.putSeckill(seckill);
+			}
 		}
 		Date startTime = seckill.getStartTime();
 		Date endTime = seckill.getEndTime();
