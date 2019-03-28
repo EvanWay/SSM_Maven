@@ -30,9 +30,9 @@ public class RedisDaoTest extends BaseTest{
 				String result = redisDao.putSeckill(seckill);
 				System.out.println(result);
 				seckill = redisDao.getSeckill(id);
-				System.out.println(seckill);
 			}
 		}
+		System.out.println(seckill);
 		
 	}
 }

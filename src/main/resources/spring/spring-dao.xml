@@ -57,7 +57,8 @@
 	
 	<!-- RedisDao -->
 	<bean id="redisDao" class="com.evanway.seckill.mapper.dao.cache.RedisDao">
-		<constructor-arg index="0" value="localhost" />
-		<constructor-arg index="1" value="6379" />
+		<constructor-arg name="host" value="120.78.142.113" />
+		<constructor-arg name="port" value="6379" />
+		<constructor-arg name="password" value="123" />
 	</bean>
 </beans>

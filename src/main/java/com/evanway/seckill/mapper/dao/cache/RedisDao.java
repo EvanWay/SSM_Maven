@@ -1,5 +1,6 @@
 package com.evanway.seckill.mapper.dao.cache;
 
+import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +19,8 @@ public class RedisDao {
 	
 	private RuntimeSchema<Seckill> schema = RuntimeSchema.createFrom(Seckill.class); 
 
-	public RedisDao(String ip, int port) {
-		jedisPool = new JedisPool(ip, port);
+	public RedisDao(final String host, int port, final String password) {
+		jedisPool = new JedisPool(new GenericObjectPoolConfig(), host, port, 2000, password);
 	}
 
 	public Seckill getSeckill(long seckillId) {
