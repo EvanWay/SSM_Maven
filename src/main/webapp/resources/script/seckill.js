@@ -1,18 +1,18 @@
 //存放主要交互逻辑的js代码
 // javascript 模块化(package.类.方法)
-
+var basePath = '/'+window.location.pathname.split("/")[1];
 var seckill = {
 
 	// 封装秒杀相关ajax的url
 	URL : {
 		now : function() {
-			return '/seckill/time/now';
+			return basePath + '/seckill/time/now';
 		},
 		exposer : function(seckillId) {
-			return '/seckill/' + seckillId + '/exposer';
+			return basePath + '/seckill/' + seckillId + '/exposer';
 		},
 		execution : function(seckillId, md5) {
-			return '/seckill/' + seckillId + '/' + md5 + '/execution';
+			return basePath + '/seckill/' + seckillId + '/' + md5 + '/execution';
 		}
 	},
 
@@ -47,7 +47,7 @@ var seckill = {
 					console.log("inputPhone: " + inputPhone);
 					if (seckill.validatePhone(inputPhone)) {
 						// 电话写入cookie(7天过期)
-						$.cookie('userPhone', inputPhone, {expires : 7, path : '/seckill'});
+						$.cookie('userPhone', inputPhone, {expires : 7, path : basePath+'/seckill'});
 						// 刷新页面
 						window.location.reload();
 					} else {
