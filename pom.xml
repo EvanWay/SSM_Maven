@@ -6,7 +6,6 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ssm Maven Webapp</name>
-	<url>http://github.com/liyifeng1994/ssm</url>
     <description>A Maven project to study Java</description>
 
 	<dependencies>
