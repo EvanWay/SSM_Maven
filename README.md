@@ -14,12 +14,14 @@
 
 -- master主干
 * （1）创建数据库表，先运行目录src/main/sql/schema.sql（提前先建好库，数据库名ssm）
-* （2）修改src/main/resources/jdbc.properties中的连接配置
+* （2）修改src/main/resources/jdbc.properties中的连接配置（数据库地址、密码）
+* （3）idea配置tomcat：Add Configuration - +号 - Tomcat Server - Local，点Configure
+
 
 --seckill分支
 * （1）下载代码后，切换分支到seckill
 * （2）创建数据库表，运行目录src/main/sql/schema_seckill.sql（提前先建好库，数据库名seckill）
-* （3）修改src/main/resources/jdbc.properties中的连接配置
+* （3）修改src/main/resources/jdbc.properties中的连接配置（数据库地址、密码）
 
 **SSM框架**
 * 1、SpringMVC：它用于web层，相当于controller（等价于传统的servlet和struts的action），用来处理用户请求。举个例子，用户在地址栏输入http://网站域名/login ，那么springmvc就会拦截到这个请求，并且调用controller层中相应的方法，（中间可能包含验证用户名和密码的业务逻辑，以及查询数据库操作，但这些都不是springmvc的职责），最终把结果返回给用户，并且返回相应的页面（当然也可以只返回json/xml等格式数据）。springmvc就是做前面和后面过程的活，与用户打交道！！
